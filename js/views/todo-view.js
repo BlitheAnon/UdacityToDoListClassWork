@@ -19,6 +19,7 @@ var app = app || {};
 		events: {
 			'click .toggle': 'toggleCompleted',
 			'dblclick label': 'edit',
+			'click .edit-btn': 'edit',
 			'click .destroy': 'clear',
 			'keypress .edit': 'updateOnEnter',
 			'keydown .edit': 'revertOnEscape',
@@ -68,6 +69,8 @@ var app = app || {};
 		// Toggle the `"completed"` state of the model.
 		toggleCompleted: function () {
 			this.model.toggle();
+			//this.$el[0].classList.length>0? this.$el.find("label").append("<span>--done</span>"): this.$el.find("span").remove();
+			//console.log(this.$el[0].classList.length);
 		},
 
 		// Switch this view into `"editing"` mode, displaying the input field.
